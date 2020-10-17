@@ -1,0 +1,115 @@
+/*
+
+ https://zellwk.com/blog/responsive-grid-system/
+
+First we find out what 30px in percentage is: 30px � 960px � 100 = 3.125%
+
+We now decide on how many elements / sections / boxes we want to use and how they will look.
+
+To illustrate how these elements will work, we use the following demonstration:
+
+   1. box
+   2. box | margin | box
+   3. box | margin | box | margin | box
+   5. box | margin | box | margin | box | margin | box | margin | box
+
+The responsive width is found using the above result:
+
+630px / 960px * 100 = 65.625%
+
+So now we have an end result that mathematically looks like:
+
+31.25% | 3.125% | 65.625%
+
+If you add all of the above sizes together you get => 100%
+*/
+
+.one_half,
+.one_third,
+.two_third,
+.one_fifth,
+.two_fifth,
+.three_fifth,
+.four_fifth {
+    display: inline;
+    float: left;
+    margin: 0 0 0 3.125%;
+    list-style: none;
+}
+
+.one_half:first-child,
+.one_third:first-child,
+.two_third:first-child,
+.one_fifth:first-child,
+.two_fifth:first-child,
+.three_fifth:first-child,
+.four_fifth:first-child {
+    margin-left: 0;
+}
+
+.first {
+    margin-left: 0;
+    clear: left;
+}
+
+.full_width {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+
+/*----------------------------------------------Half Grid-------------------------------------*/
+
+
+/*
+.one_half{width:465px;} => 465 / 960 = 0.484375 * 100 = 48.4375
+*/
+
+.one_half {
+    width: 48.4375%;
+}
+
+
+/*----------------------------------------------Third Grid-------------------------------------*/
+
+
+/*
+.one_third{width:300px;} => 300 / 960 = 0.3125 * 100 = 31.25
+.two_third{width:630px;} => 630 / 960 = 0.65625 * 100 = 65.625
+*/
+
+.one_third {
+    width: 31.25%;
+}
+
+.two_third {
+    width: 65.625%;
+}
+
+
+/*----------------------------------------------Fifth Grid-------------------------------------*/
+
+
+/*
+.one_fifth{width:168px;} => 168 / 960 = 0.175 * 100 = 17.5
+.two_fifth{width:366px;} => 366 / 960 = 0.38125 * 100 = 38.125
+.three_fifth{width:564px;} => 564 / 960 = 0.5875 * 100 = 58.75
+.four_fifth{width:762px;} => 762 / 960 = 0.79375 * 100 = 79.375
+*/
+
+.one_fifth {
+    width: 17.5%;
+}
+
+.two_fifth {
+    width: 38.125%;
+}
+
+.three_fifth {
+    width: 58.75%;
+}
+
+.four_fifth {
+    width: 79.375%;
+}
